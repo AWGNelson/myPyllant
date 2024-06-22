@@ -75,6 +75,7 @@ async def main(user, password, brand, country):
                         < dt + timedelta(seconds=180)
                     ):
                         logging.debug("Refreshing token for %s", api.username)
+                        logging
                         await api.refresh_token()
 
                     async for system in api.get_systems():
@@ -88,6 +89,6 @@ async def main(user, password, brand, country):
         await schedule_task(api)
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     a = asyncio.run(main("peter@petereastern.com", "!d9kmypCW8Nd@KvGE3PJt", "vaillant", "unitedkingdom"))
     print(a)
